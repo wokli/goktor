@@ -2,8 +2,8 @@ name: docker
 
 on:
   push:
-    branches:
-      - 'main'
+    tags:
+      - '*'
 
 jobs:
   docker:
@@ -26,4 +26,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: a13xn/goktor:latest
+          tags: a13xn/goktor:$GITHUB_REF_NAME
