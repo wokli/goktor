@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: goktor
-        image: a13xn/goktor:0.0.3
+        image: a13xn/goktor:latest
         resources:
           requests:
             memory: "16Mi"
