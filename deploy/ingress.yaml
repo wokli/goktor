@@ -2,15 +2,12 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: goktor
-  namespace: test-ns
   annotations:
-    alb.ingress.kubernetes.io/target-type: ip
-    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
-    alb.ingress.kubernetes.io/certificate-arn: "arn:aws:acm:eu-central-1:643726944824:certificate/c585d354-13fd-4055-ab6b-cdf1127ab031"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
 spec:
-  ingressClassName: alb-k8s-internal
+  ingressClassName: private-nginx
   rules:
-    - host: "goktor.smile2impress.dev"
+    - host: goktor.smile2impress.dev
       http:
         paths:
           - path: /

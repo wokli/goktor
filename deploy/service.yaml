@@ -4,6 +4,9 @@ kind: Service
 metadata:
   labels:
     app: goktor
+  annotations:
+    prometheus.io/scrape: 'true'
+    prometheus.io/port: '8080'
   name: goktor
   namespace: test-ns
 spec:

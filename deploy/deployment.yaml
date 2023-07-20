@@ -13,12 +13,14 @@ spec:
       labels:
         app: goktor
     spec:
+      tolerations:
+      - operator: "Exists"
       containers:
       - name: goktor
         image: a13xn/goktor:latest
         resources:
           requests:
-            memory: "16Mi"
+            memory: "32Mi"
             cpu: "100m"
           limits:
             memory: "32Mi"
